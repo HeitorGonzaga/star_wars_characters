@@ -18,7 +18,6 @@ const Detail = () => {
 
   return (
     <Container>
-
       <ListItem>
         <LottieView
           source={require('../../assets/starwars.json')}
