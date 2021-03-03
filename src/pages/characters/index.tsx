@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, FlatList } from 'react-native';
+import {FlatList} from 'react-native';
 
 import {Container, ListItem, Detail, Item} from './styles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -7,12 +7,13 @@ import api from '../../services/api';
 
 import ListCharactersProps from '../../interfaces/ListCharactersProps';
 import CharacterProps from '../../interfaces/CharacterProps';
+import {useNavigation} from '@react-navigation/native';
 
 const Characters = () => {
-
   const [nextPage, setNextPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [characters, setCharacters] = useState<CharacterProps[]>([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     setNextPage(() => 1);
@@ -41,8 +42,12 @@ const Characters = () => {
     }
   };
 
+  const _handleDatail = (character: CharacterProps) => {
+    navigation.navigate('Detail', {character: character})
+  };
+
   const renderItem = ({item}: {item: CharacterProps}) => (
-    <ListItem>
+    <ListItem onPress={() => _handleDatail(item)}>
       <Detail>
         <Item weight="bold">Name - {item.name}</Item>
         <Item>Birth Year - {item.birth_year}</Item>

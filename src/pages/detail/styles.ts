@@ -6,7 +6,7 @@ export const Container = styled.View`
   padding: 10px;
 `;
 
-export const ListItem = styled.TouchableOpacity`
+export const ListItem = styled.View`
   background-color: #414a4c;
   margin-top: 20px;
   padding: 30px;
@@ -18,7 +18,7 @@ export const ListItem = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export const Detail = styled.View``;
+export const Details = styled.View``;
 
 export const Item = styled.Text`
   color: ghostwhite;

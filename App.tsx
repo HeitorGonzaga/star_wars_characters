@@ -1,12 +1,15 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
-import Characters from './src/pages/characters';
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from './src/routes';
 
 const App = () => {
   return (
     <>
       <StatusBar animated={true} backgroundColor="#353839" />
-      <Characters />
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
     </>
   );
 };
