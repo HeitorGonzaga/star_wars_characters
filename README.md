@@ -2,6 +2,11 @@
 
 Aplicativo desenvolvido em react-native.
 
+# Capturas de Tela
+
+<img src="https://github.com/HeitorGonzaga/star_wars_characters/blob/main/screenshots/screen01.jpeg?raw=true" width="30%"></img> <img src="https://github.com/HeitorGonzaga/star_wars_characters/blob/main/screenshots/screen02.jpeg?raw=true" width="30%"></img> <img src="https://github.com/HeitorGonzaga/star_wars_characters/blob/main/screenshots/screen03.jpeg?raw=true" width="30%"></img> 
+
+
 ## O Cenário
 
 Criar um aplicativo, usando React Native, que lista todos os personagens de Star Wars
