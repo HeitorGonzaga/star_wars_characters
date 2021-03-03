@@ -13,16 +13,19 @@ export const ListItem = styled.View`
   border-radius: 20px;
   border-color: ${(props) => props.border || 'grey'};
   border-width: 1.5px;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 `;
 
-export const Details = styled.View``;
+export const Details = styled.View`
+  margin-top: 30px;
+`;
 
 export const Item = styled.Text`
   color: ghostwhite;
   font-size: 16px;
+  text-align: center;
   font-weight: ${(props) => props.weight || 'normal'};
 `;
 

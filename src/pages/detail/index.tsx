@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Container, ListItem, Details, Item} from './styles';
 import CharacterProps from '../../interfaces/CharacterProps';
 import {useRoute, RouteProp} from '@react-navigation/native';
+import LottieView from 'lottie-react-native';
 type ParamList = {
   Parametros: {
     character: CharacterProps;
@@ -17,7 +18,14 @@ const Detail = () => {
 
   return (
     <Container>
+
       <ListItem>
+        <LottieView
+          source={require('../../assets/starwars.json')}
+          style={{width:200, height:200}}
+          autoPlay
+          loop
+        />
         <Details>
           <Item weight="bold">Name - {character?.name}</Item>
           <Item>Birth Year - {character?.birth_year}</Item>
