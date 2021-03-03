@@ -5,7 +5,7 @@ import Characters from './src/pages/characters';
 const App = () => {
   return (
     <>
-      <StatusBar animated={true} backgroundColor="#000000" />
+      <StatusBar animated={true} backgroundColor="#353839" />
       <Characters />
     </>
   );

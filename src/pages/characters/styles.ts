@@ -13,11 +13,17 @@ export const ListItem = styled.View`
   border-radius: 20px;
   border-color: ${(props) => props.border || 'grey'};
   border-width: 1.5px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
+
+export const Detail = styled.View``;
 
 export const Item = styled.Text`
   color: ghostwhite;
   font-size: 16px;
+  font-weight: ${(props) => props.weight || 'normal'};
 `;
 
 export const Loading = styled.View`

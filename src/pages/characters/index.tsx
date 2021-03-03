@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, FlatList, ActivityIndicator} from 'react-native';
+import {Text, View, FlatList } from 'react-native';
 
-import {Container, ListItem, Loading, Item} from './styles';
-
+import {Container, ListItem, Detail, Item} from './styles';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
 
 import ListCharactersProps from '../../interfaces/ListCharactersProps';
@@ -43,30 +43,27 @@ const Characters = () => {
 
   const renderItem = ({item}: {item: CharacterProps}) => (
     <ListItem>
-      <Item>{item.name}</Item>
+      <Detail>
+        <Item weight="bold">Name - {item.name}</Item>
+        <Item>Birth Year - {item.birth_year}</Item>
+      </Detail>
+      <Icon name="arrow-forward-ios" size={24} color="ghostwhite" />
     </ListItem>
   );
-
-  const renderFooter = () => {
-    if (!loading) return null;
-    return (
-      <Loading>
-        <ActivityIndicator size={50} color={'#ff8c00'} />
-      </Loading>
-    );
-  };
 
   return (
     <Container>
       <FlatList
         data={characters}
         renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+        onRefresh={_handleLoadData}
+        refreshing={loading}
         onEndReached={_handleLoadData}
         onEndReachedThreshold={0.1}
         keyExtractor={(item) => item.name}
-        ListFooterComponent={renderFooter}
       />
-
     </Container>
   );
 };
