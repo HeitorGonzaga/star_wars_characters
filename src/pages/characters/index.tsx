@@ -47,7 +47,7 @@ const Characters = () => {
   };
 
   const renderItem = ({item}: {item: CharacterProps}) => (
-    <ListItem onPress={() => _handleDatail(item)}>
+    <ListItem onPress={() => _handleDatail(item)} testID="itemList">
       <Detail>
         <Item weight="bold">Name - {item.name}</Item>
         <Item>Birth Year - {item.birth_year}</Item>
@@ -57,8 +57,9 @@ const Characters = () => {
   );
 
   return (
-    <Container>
+    <Container testID="characters-page">
       <FlatList
+        testID="characters"
         data={characters}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
